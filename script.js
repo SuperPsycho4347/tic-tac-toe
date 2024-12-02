@@ -1,22 +1,24 @@
 // Functions
-const gameBoard = (() => {
-    const actualBoard = ['', '', '', '', '', '', '', '', '']
-    return {actualBoard}
-})
+function gameBoard() {
+    // Initial board
+    const actualBoard = []
 
-const createPlayer = (playerName, playerSymbol) => {
-    return {playerName, playerSymbol}
+    // Creates a 3x3 board 
+    for(let i = 0; i < 3; i++) {
+        actualBoard[i] = []
+        for(let j = 0; j < 3; j++) {
+            actualBoard[i][j]= ""
+        }
+    }
+
+    return {actualBoard}
 }
 
+function createPlayer(playerName, playerMark) {
+    this.playerName = playerName
+    this.playerMark = playerMark
 
-const gameController = () => {
-    const {actualBoard} = actualBoard
-
-    let symbol = ''
-    let winningPlayer = ''
+    return{playerName, playerMark}
 }
 
 // Execution
-const playerOne = createPlayer('Player 1', 'X')
-const playerTwo = createPlayer('Player 2', 'O')
-
